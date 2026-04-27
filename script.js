@@ -1,37 +1,56 @@
-// 1. Variáveis para armazenar estado
-let fontSize = 16;
-const bodyElement = document.body;
+// assets/js/script.js
 
-// 2. Manipulação de Identidade: Boas-vindas personalizada
-const inputName = document.getElementById('user-name');
-const btnGreet = document.getElementById('btn-greet');
-const greetingDisplay = document.getElementById('greeting-display');
+// 1. Variáveis de Estado
+const state = {
+    userName: "",
+    isDarkMode: false,
+    fontSize: 16
+};
 
-// Função para processar o nome e atualizar o DOM
-btnGreet.addEventListener('click', () => {
-    const name = inputName.value.trim();
+// 2. Elementos do DOM
+const btnStart = document.getElementById('start-btn');
+const inputUser = document.getElementById('user-input');
+const welcomeMsg = document.getElementById('welcome-msg');
+const modeToggle = document.getElementById('mode-toggle');
+
+// 3. Função de Boas-vindas (Processamento de Informação)
+btnStart.addEventListener('click', () => {
+    const rawName = inputUser.value.trim();
     
-    if (name !== "") {
-        // Armazena e processa a informação antes de exibir
-        const message = `Olá, ${name}! Bem-vindo ao futuro do campo.`;
-        greetingDisplay.textContent = message;
-        greetingDisplay.classList.remove('hidden');
-        inputName.parentElement.classList.add('hidden'); // Esconde o input após uso
+    if(rawName.length > 2) {
+        state.userName = rawName;
+        // Altera o HTML dinamicamente
+        welcomeMsg.innerHTML = `<strong>Seja bem-vindo(a), ${state.userName}!</strong> Vamos juntos semear o amanhã.`;
+        welcomeMsg.style.display = "block";
+        inputUser.parentElement.style.display = "none";
+        
+        // Inicia contadores de impacto (Efeito visual)
+        runCounters();
     } else {
-        alert("Por favor, digite seu nome.");
+        alert("Por favor, insira um nome válido para continuar.");
     }
 });
 
-// 3. Melhoria de Usuário: Modo Escuro
-const btnTheme = document.getElementById('btn-theme');
-btnTheme.addEventListener('click', () => {
-    bodyElement.classList.toggle('dark-mode');
+// 4. Modo Escuro (Interatividade)
+modeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+    state.isDarkMode = !state.isDarkMode;
 });
 
-// 4. Melhoria de Usuário: Alteração de tamanho de fonte
-const btnFont = document.getElementById('btn-font');
-btnFont.addEventListener('click', () => {
-    fontSize += 2;
-    if (fontSize > 24) fontSize = 16; // Reset após certo tamanho
-    document.documentElement.style.setProperty('--base-font', fontSize + 'px');
+// 5. Função para simular contadores de sustentabilidade
+function runCounters() {
+    const prodDisplay = document.getElementById('counter-prod');
+    let count = 0;
+    const interval = setInterval(() => {
+        count += 15;
+        prodDisplay.innerText = count + "+";
+        if(count >= 1500) clearInterval(interval);
+    }, 20);
+}
+
+// 6. Acessibilidade: Aumento de Fonte
+document.getElementById('font-up').addEventListener('click', () => {
+    state.fontSize += 2;
+    if(state.fontSize > 24) state.fontSize = 16;
+    document.body.style.fontSize = state.fontSize + "px";
 });
