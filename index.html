@@ -3,67 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroSustentável | Equilíbrio no Campo</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <title>AgroSustentável | Futuro em Equilíbrio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header id="top-header">
+    <header>
         <nav class="navbar container">
-            <div class="logo">Agro<span>Sustentável</span></div>
-            <div class="controls">
-                <button id="btn-theme" title="Alternar Modo Escuro">🌓</button>
-                <button id="btn-font-up" title="Aumentar Fonte">A+</button>
-                <button id="btn-font-down" title="Diminuir Fonte">A-</button>
+            <div class="logo">Agro<span>Forte</span></div>
+            <div class="accessibility">
+                <button id="theme-btn" title="Alternar Contraste">🌓</button>
+                <button id="font-up" title="Aumentar Texto">A+</button>
             </div>
         </nav>
     </header>
 
     <main>
         <section class="hero">
-            <div class="container hero-grid">
-                <div class="hero-text">
-                    <h1 id="main-title">Produtividade que protege.</h1>
-                    <p>O agronegócio moderno une a força da produção com o respeito à biodiversidade.</p>
-                    
-                    <form id="form-user" class="interactive-form">
-                        <label for="username">Quer saber como você pode ajudar? Digite seu nome:</label>
-                        <div class="input-group">
-                            <input type="text" id="username" placeholder="Seu nome aqui..." required>
-                            <button type="submit" id="btn-submit">Começar Jornada</button>
-                        </div>
-                    </form>
-                    <div id="welcome-message" class="hidden"></div>
+            <div class="container">
+                <h1>Produção Forte, <br><span>Natureza Preservada</span></h1>
+                <p>O equilíbrio que sustenta o Brasil e alimenta o mundo através da tecnologia verde.</p>
+                
+                <div id="interaction-box" class="form-container">
+                    <label for="user-name">Como você se chama?</label>
+                    <div class="input-group">
+                        <input type="text" id="user-name" placeholder="Digite seu nome...">
+                        <button id="main-action">Conhecer o Futuro</button>
+                    </div>
                 </div>
-                <div class="hero-img">
-                    <div class="image-placeholder">Agro + Verde</div>
-                </div>
+                <div id="display-welcome" class="hidden"></div>
             </div>
         </section>
 
-        <section class="pillars container">
-            <h2 class="section-title">Nossos Pilares</h2>
-            <div class="cards-container">
-                <article class="card">
-                    <h3>Tecnologia de Precisão</h3>
-                    <p>Drones e sensores que reduzem o uso de insumos químicos em até 40%.</p>
-                </article>
-                <article class="card">
-                    <h3>Recuperação de Solos</h3>
-                    <p>O plantio direto mantém a vida na terra e retém mais carbono da atmosfera.</p>
-                </article>
-                <article class="card">
-                    <h3>Gestão de Água</h3>
-                    <p>Irrigação inteligente que utiliza apenas o necessário para cada planta.</p>
-                </article>
-            </div>
+        <section class="cards container">
+            <article class="card">
+                <div class="card-icon">💧</div>
+                <h3>Uso da Água</h3>
+                <p>Irrigação de precisão que economiza recursos hídricos vitais.</p>
+            </article>
+            <article class="card">
+                <div class="card-icon">🛰️</div>
+                <h3>Monitoramento</h3>
+                <p>Satélites que garantem o cumprimento das metas ambientais.</p>
+            </article>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Projeto Agrinho - Cultivando conhecimento para um futuro viável.</p>
+        <p>&copy; 2026 Projeto Agrinho - Conteúdo 100% Autoral</p>
     </footer>
 
-    <script src="assets/js/script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
