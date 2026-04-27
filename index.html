@@ -3,73 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgroSustentável | Tecnologia e Natureza</title>
+    <title>AgroSustentável | Equilíbrio no Campo</title>
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-    <header id="header">
+    <header id="top-header">
         <nav class="navbar container">
-            <div class="logo">Agro<span>Forte</span></div>
-            <div class="nav-actions">
-                <button id="mode-toggle" class="icon-btn" title="Alternar Visualização">🌓</button>
-                <button id="font-up" class="icon-btn" title="Aumentar Texto">A+</button>
-                <a href="#contato" class="btn-sm">Fale Conosco</a>
+            <div class="logo">Agro<span>Sustentável</span></div>
+            <div class="controls">
+                <button id="btn-theme" title="Alternar Modo Escuro">🌓</button>
+                <button id="btn-font-up" title="Aumentar Fonte">A+</button>
+                <button id="btn-font-down" title="Diminuir Fonte">A-</button>
             </div>
         </nav>
     </header>
 
     <main>
         <section class="hero">
-            <div class="hero-overlay">
-                <div class="container">
-                    <h1 id="main-title">O campo produz, a tecnologia preserva.</h1>
-                    <p class="hero-subtitle">Descubra como o equilíbrio sustenta o futuro do Brasil.</p>
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <h1 id="main-title">Produtividade que protege.</h1>
+                    <p>O agronegócio moderno une a força da produção com o respeito à biodiversidade.</p>
                     
-                    <div class="interactive-form">
-                        <label for="user-input">Para uma experiência personalizada, digite seu nome:</label>
-                        <div class="input-box">
-                            <input type="text" id="user-input" placeholder="Ex: Maria Silva">
-                            <button id="start-btn">Explorar</button>
+                    <form id="form-user" class="interactive-form">
+                        <label for="username">Quer saber como você pode ajudar? Digite seu nome:</label>
+                        <div class="input-group">
+                            <input type="text" id="username" placeholder="Seu nome aqui..." required>
+                            <button type="submit" id="btn-submit">Começar Jornada</button>
                         </div>
-                        <div id="welcome-msg" class="welcome-msg"></div>
-                    </div>
+                    </form>
+                    <div id="welcome-message" class="hidden"></div>
+                </div>
+                <div class="hero-img">
+                    <div class="image-placeholder">Agro + Verde</div>
                 </div>
             </div>
         </section>
 
-        <section class="stats container">
-            <div class="stat-item">
-                <h2 id="counter-prod">0</h2>
-                <p>Toneladas Sustentáveis</p>
+        <section class="pillars container">
+            <h2 class="section-title">Nossos Pilares</h2>
+            <div class="cards-container">
+                <article class="card">
+                    <h3>Tecnologia de Precisão</h3>
+                    <p>Drones e sensores que reduzem o uso de insumos químicos em até 40%.</p>
+                </article>
+                <article class="card">
+                    <h3>Recuperação de Solos</h3>
+                    <p>O plantio direto mantém a vida na terra e retém mais carbono da atmosfera.</p>
+                </article>
+                <article class="card">
+                    <h3>Gestão de Água</h3>
+                    <p>Irrigação inteligente que utiliza apenas o necessário para cada planta.</p>
+                </article>
             </div>
-            <div class="stat-item">
-                <h2 id="counter-area">0</h2>
-                <p>Hectares Preservados</p>
-            </div>
-        </section>
-
-        <section class="content-grid container">
-            <article class="feature-card" data-aos="fade-up">
-                <div class="card-icon">🌱</div>
-                <h3>Plantio Direto</h3>
-                <p>Técnica que mantém a palhada no solo, reduzindo erosão e conservando nutrientes.</p>
-            </article>
-            <article class="feature-card">
-                <div class="card-icon">🛰️</div>
-                <h3>Agro 5.0</h3>
-                <p>Drones e sensores que aplicam insumos apenas onde é necessário, evitando desperdício.</p>
-            </article>
-            <article class="feature-card">
-                <div class="card-icon">♻️</div>
-                <h3>Energia Limpa</h3>
-                <p>Transformação de resíduos animais em biogás para autossuficiência energética.</p>
-            </article>
         </section>
     </main>
 
-    <footer class="footer">
-        <p>Projeto Agrinho 2026 - Sustentabilidade e Inovação</p>
+    <footer>
+        <p>&copy; 2024 Projeto Agrinho - Cultivando conhecimento para um futuro viável.</p>
     </footer>
 
     <script src="assets/js/script.js"></script>
