@@ -1,43 +1,44 @@
-// Seleção de elementos do DOM
-const formUser = document.getElementById('form-user');
-const inputName = document.getElementById('username');
-const welcomeArea = document.getElementById('welcome-message');
-const btnTheme = document.getElementById('btn-theme');
+// 1. Variáveis de estado
+let fontSize = 16;
+const body = document.body;
 
-// Função para processar o nome e atualizar a tela
-formUser.addEventListener('submit', (event) => {
-    event.preventDefault(); // Evita o recarregamento da página
-    
-    // Armazena o valor em uma variável antes de processar
-    const name = inputName.value.trim();
-    
-    if (name) {
-        // Manipulação funcional do DOM
-        formUser.classList.add('hidden');
-        welcomeArea.innerHTML = `<h3>Seja bem-vindo(a), ${name}!</h3>
-                                 <p>O equilíbrio começa com consciência. Explore o site abaixo.</p>`;
-        welcomeArea.classList.remove('hidden');
-        welcomeArea.style.color = 'var(--accent)';
-    }
+// 2. Elementos
+const themeBtn = document.getElementById('theme-btn');
+const fontBtn = document.getElementById('font-up');
+const actionBtn = document.getElementById('main-action');
+const inputName = document.getElementById('user-name');
+const welcomeBox = document.getElementById('display-welcome');
+const interactionBox = document.getElementById('interaction-box');
+
+// Função: Modo Escuro
+themeBtn.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    console.log("Tema alternado");
 });
 
-// Lógica de Modo Escuro
-btnTheme.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-    // Salva a preferência ou atualiza ícone se necessário
-    console.log("Tema alterado pelo usuário.");
+// Função: Aumentar Fonte
+fontBtn.addEventListener('click', () => {
+    fontSize += 2;
+    if (fontSize > 26) fontSize = 16; // Reinicia se ficar muito grande
+    body.style.fontSize = fontSize + "px";
 });
 
-// Lógica de Tamanho de Fonte
-let currentSize = 16;
-document.getElementById('btn-font-up').addEventListener('click', () => {
-    currentSize += 2;
-    document.body.style.fontSize = currentSize + 'px';
-});
+// Função: Processar Nome e Alterar DOM
+actionBtn.addEventListener('click', () => {
+    const nomeUsuario = inputName.value.trim();
 
-document.getElementById('btn-font-down').addEventListener('click', () => {
-    if(currentSize > 12) {
-        currentSize -= 2;
-        document.body.style.fontSize = currentSize + 'px';
+    if (nomeUsuario !== "") {
+        // Manipulação funcional: Esconde um e mostra outro
+        interactionBox.classList.add('hidden');
+        
+        welcomeBox.innerHTML = `
+            <div style="padding: 20px; border: 2px solid var(--primary); border-radius: 10px;">
+                <h2>Bem-vindo à revolução, ${nomeUsuario}!</h2>
+                <p>Obrigado por apoiar um agro mais forte e sustentável.</p>
+            </div>
+        `;
+        welcomeBox.classList.remove('hidden');
+    } else {
+        alert("Por favor, digite seu nome para continuar.");
     }
 });
